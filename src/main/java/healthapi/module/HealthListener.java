@@ -63,8 +63,8 @@ public class HealthListener implements Listener {
                         if ((int)entity.getHealth() == 8 && (int)health.getHealth() > 8) {
                             damages = 1;
                         }
-                        if(damages < 0){
-                            damages = 1.0f;
+                        if(damages < 1){
+                            damages = 0.0f;
                         }
                         event.setDamage((float) damages);
                         entity.setHealth(health.getPlayerHealth());
@@ -74,7 +74,7 @@ public class HealthListener implements Listener {
                 }else{
                     event.setCancelled();
                     if(entity.isAlive()){
-                        entity.setHealth(0);
+                        health.addDeath();
                     }
                 }
             }

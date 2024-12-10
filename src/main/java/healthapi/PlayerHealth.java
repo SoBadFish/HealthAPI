@@ -401,7 +401,7 @@ public class PlayerHealth  {
         Player player = Server.getInstance().getPlayer(playerName);
         if(player != null){
             if(player.isAlive()) {
-                player.setHealth(0);
+                player.kill();
             }
         }
     }
